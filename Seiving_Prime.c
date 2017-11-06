@@ -1,11 +1,23 @@
-#include<mpi.h>
+#include <mpi.h>
 #include <math.h>
 #include <stdio.h>
-#include "MyMPI.h"
+#include <stdlib.h>
+#include <stdint,h>
 #define MIN(a,b)  ((a)<(b)?(a):(b))
+
+// Defining Block Low, Block High and Block Size
+
+#define BLOCK_LOW(id, p, n) ((id)*(n)/(p))
+#define BLOCK_HIGH(id, p, n) (BLOCK_LOW((id)+1, p,n)-1)
+#define BLOCK_SIZE(id, p, n) (BLOCK_LOW((id)+1,p,n)-BLOCK_LOW((id),p,n))
 
 int main (int argc, char *argv[])
 {
+    int *arrA = (int*)calloc(pow(10,10),sizeof(int));
+    double elapsed_time;
+    int id, index, global_count,p,count;
+    int64_t n,low_value, high_value, size, proc0_size,i,prime,first;
+    char *marked;
     //variable declaration
     MPI_Init (&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
@@ -68,7 +80,7 @@ int main (int argc, char *argv[])
     MPI_Reduce (&count, &global_count, 1, MPI_INT, MPI_SUM,0, MPI_COMM_WORLD);
     elapsed_time += MPI_Wtime();
     if (!id) {
-        printf ("%d primes are less than or equal to %d\n",global_count, n);
+        printf ("%d primes are less than or equal to %ld\n",global_count, n);
         printf ("Total elapsed time: %10.6f\n", elapsed_time);
     }
     MPI_Finalize ();
