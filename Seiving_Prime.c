@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint,h>
+#include <stdint.h>
 #define MIN(a,b)  ((a)<(b)?(a):(b))
 
 // Defining Block Low, Block High and Block Size
