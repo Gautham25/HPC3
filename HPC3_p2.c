@@ -16,15 +16,13 @@ int main(int argc, char *argv[])
 {
     //int *arrA = (int*)calloc(pow(10,10),sizeof(int));
     double elapsed_time;
-    int id, index,p,count, nodes;
+    int id, index,p,count;
     unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
     char *marked;
     unsigned long long int global_count;
     unsigned long long int localLow,localHigh,localSize,localFirst;
     char *localMarked;
     //variable declaration
-
-    nodes = atoi(argv[2]);
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
@@ -123,7 +121,7 @@ int main(int argc, char *argv[])
     elapsed_time += MPI_Wtime();
     if (!id) {
         global_count++;
-        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %d\n",global_count,elapsed_time,nodes);
+        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %s\n",global_count,elapsed_time,argv[2]);
         // printf ("Total elapsed time: %10.6f\n", elapsed_time);
     }
     MPI_Finalize();
