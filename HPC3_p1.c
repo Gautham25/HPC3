@@ -31,7 +31,8 @@ int main(int argc, char *argv[])
           MPI_Finalize(); exit(1);
     }
     n = atoll(argv[1]);
-    //nodes = atoi(argv[2]);
+    nodes = atoi(argv[2]);
+    printf("\nNodes %d\n",nodes);
     low_value = 3 + BLOCK_LOW(id,p,n-2) + BLOCK_LOW(id,p,n-2) % 2;
     high_value = 3 + BLOCK_HIGH(id,p,n-2) - BLOCK_HIGH(id,p,n-2) % 2;
     size = (high_value - low_value) / 2 +1;
