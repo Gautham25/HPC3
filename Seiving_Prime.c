@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-//#include <stdint.h>
+#include <stdint.h>
 #define MIN(a,b)  ((a)<(b)?(a):(b))
 
 // Defining Block Low, Block High and Block Size
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     //int *arrA = (int*)calloc(pow(10,10),sizeof(int));
     double elapsed_time;
     int id, index, global_count,p,count;
-    int n,low_value, high_value, size, proc0_size,i,prime,first;
+    int64_t n,low_value, high_value, size, proc0_size,i,prime,first;
     char *marked;
     //variable declaration
     MPI_Init(&argc, &argv);
@@ -30,8 +30,6 @@ int main(int argc, char *argv[])
           MPI_Finalize(); exit(1);
     }
     n = atoi(argv[1]);
-    printf("HELLO WORLD!\n");
-    printf("%c \t %c",argv[0],argv[1]);
     low_value = 2 + BLOCK_LOW(id,p,n-1);
     high_value = 2 + BLOCK_HIGH(id,p,n-1);
     size = BLOCK_SIZE(id,p,n-1);
