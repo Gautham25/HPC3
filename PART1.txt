@@ -1,0 +1,9 @@
+
+Nodes 2
+Total number of primes: 4294967313, Total time:   0.000075 sec, Total nodes: 1
+
+Nodes 2
+
+Nodes 2
+
+Nodes 2

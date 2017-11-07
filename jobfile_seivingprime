@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#PBS -l nodes=2:ppn=16,walltime=01:00:00
+#PBS -N HPC3
+#PBS -M gmani001@ucr.edu
+#PBS -m abe
+
+module load gcc-4.6.2
+module load mvapich2-1.9a2/gnu-4.6.2
+
+PBS_O_WORKDIR=/home/gmani001/HPC3
+
+cd $PBS_O_WORKDIR
+
+mpirun ./Seiving_Prime 1000000000 > Prime.txt

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#PBS -l nodes=4:ppn=32,walltime=01:00:00
+#PBS -N HPC3_Part1
+#PBS -M gmani001@ucr.edu
+#PBS -m abe
+
+module load gcc-4.6.2
+module load mvapich2-1.9a2/gnu-4.6.2
+
+PBS_O_WORKDIR=/home/gmani001/HPC3
+
+cd $PBS_O_WORKDIR
+
+mpirun ./HPC3_p2 10000000000 4 >> RESULTS.txt
+

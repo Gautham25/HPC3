@@ -13,3 +13,4 @@ PBS_O_WORKDIR=/home/gmani001/HPC3
 cd $PBS_O_WORKDIR
 
 mpirun ./mpi_hello
+
