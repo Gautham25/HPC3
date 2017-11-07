@@ -89,7 +89,9 @@ int main(int argc, char *argv[])
             count++;
         }
     }
-    MPI_Reduce (&count, &global_count, 1, MPI_INT, MPI_SUM,0, MPI_COMM_WORLD);
+    if(p>1){
+        MPI_Reduce (&count, &global_count, 1, MPI_INT, MPI_SUM,0, MPI_COMM_WORLD);
+    }
     elapsed_time += MPI_Wtime();
     if (!id) {
         global_count++;
