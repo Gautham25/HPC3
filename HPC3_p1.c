@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
     elapsed_time += MPI_Wtime();
     if (!id) {
         global_count++;
-        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %d\n",global_count,elapsed_time,argv[2]);
+        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %s\n",global_count,elapsed_time,argv[2]);
         printf("\nNUMBER %llu\n", n);
         // printf ("Total elapsed time: %10.6f\n", elapsed_time);
     }
