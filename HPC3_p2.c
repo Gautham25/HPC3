@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     proc0_size = ((n-2)/(2*p));
 
     localLow = 3;
-    localHigh = 3 + BLOCK_HIGH(id,p,n-2) - BLOCK_HIGH(id,p,n-2) % 2;
+    localHigh = 3 + BLOCK_HIGH(0,p,n-2) - BLOCK_HIGH(0,p,n-2) % 2;
     localSize = (localHigh - localLow) / 2 + 1;
     localMarked = (char*)malloc(localSize);
 
