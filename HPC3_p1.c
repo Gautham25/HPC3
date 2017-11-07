@@ -17,10 +17,12 @@ int main(int argc, char *argv[])
     //int *arrA = (int*)calloc(pow(10,10),sizeof(int));
     double elapsed_time;
     int id, index,p,count, nodes;
-    unsigned long long int n,low_value, high_value, size, proc0_size,i,prime,first;
+    unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
     char *marked;
     unsigned long long int global_count;
     //variable declaration
+
+    nodes = atoi(argv[2]);
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
@@ -31,10 +33,9 @@ int main(int argc, char *argv[])
           MPI_Finalize(); exit(1);
     }
     n = atol(argv[1]);
-    nodes = atoi(argv[2]);
     low_value = 3 + BLOCK_LOW(id,p,n-2) + BLOCK_LOW(id,p,n-2) % 2;
     high_value = 3 + BLOCK_HIGH(id,p,n-2) - BLOCK_HIGH(id,p,n-2) % 2;
-    size = (high_value - low_value) / 2 +1;
+    size = (high_value - low_value) / 2 + 1;
     proc0_size = ((n-2)/(2*p));
     if ((3 + proc0_size) < (int) sqrt((double) n)) {
         if (!id) printf ("Too many processes\n");
@@ -95,6 +96,7 @@ int main(int argc, char *argv[])
     if (!id) {
         global_count++;
         printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %d\n",global_count,elapsed_time,nodes);
+        printf("\nNUMBER %llu\n", n);
         // printf ("Total elapsed time: %10.6f\n", elapsed_time);
     }
     MPI_Finalize();
