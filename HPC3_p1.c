@@ -22,14 +22,12 @@ int main(int argc, char *argv[])
     unsigned long long int global_count;
     //variable declaration
     nodes = atoi(argv[2]);
-    printf("\n%s\n",argv[2]);
-    printf("\n%d\n",nodes);
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
     MPI_Comm_rank(MPI_COMM_WORLD, &id);
     MPI_Comm_size(MPI_COMM_WORLD, &p);
-    if (argc != 2) {
+    if (argc != 3) {
           if (!id) printf ("Command line: %s <m>\n", argv[0]);
           MPI_Finalize(); exit(1);
     }
@@ -97,7 +95,7 @@ int main(int argc, char *argv[])
     elapsed_time += MPI_Wtime();
     if (!id) {
         global_count++;
-        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: 1\n",global_count,elapsed_time);
+        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %d\n",global_count,elapsed_time,nodes);
         // printf ("Total elapsed time: %10.6f\n", elapsed_time);
     }
     MPI_Finalize();
