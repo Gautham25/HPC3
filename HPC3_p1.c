@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
     char *marked;
     unsigned long long int global_count;
     //variable declaration
-    nodes = atoi(argv[2]);
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
@@ -31,8 +30,8 @@ int main(int argc, char *argv[])
           if (!id) printf ("Command line: %s <m>\n", argv[0]);
           MPI_Finalize(); exit(1);
     }
-    n = atoll(argv[1]);
-
+    n = atol(argv[1]);
+    nodes = atoi(argv[2]);
     low_value = 3 + BLOCK_LOW(id,p,n-2) + BLOCK_LOW(id,p,n-2) % 2;
     high_value = 3 + BLOCK_HIGH(id,p,n-2) - BLOCK_HIGH(id,p,n-2) % 2;
     size = (high_value - low_value) / 2 +1;
