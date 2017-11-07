@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
 {
     //int *arrA = (int*)calloc(pow(10,10),sizeof(int));
     double elapsed_time;
-    int id, index, global_count,p,count;
-    int64_t n,low_value, high_value, size, proc0_size,i,prime,first;
+    int id, index,p,count;
+    int64_t n,low_value, global_count,  high_value, size, proc0_size,i,prime,first;
     char *marked;
     //variable declaration
     MPI_Init(&argc, &argv);
@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
         MPI_Finalize();
         exit(1);
     }
+
     marked = (char *) malloc (size);
     if (marked == NULL) {
         printf("Cannot allocate enough memory\n");
