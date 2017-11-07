@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     elapsed_time = -MPI_Wtime();
     MPI_Comm_rank(MPI_COMM_WORLD, &id);
     MPI_Comm_size(MPI_COMM_WORLD, &p);
-    if (argc != 2) {
+    if (argc != 3) {
           if (!id) printf ("Command line: %s <m>\n", argv[0]);
           MPI_Finalize(); exit(1);
     }
