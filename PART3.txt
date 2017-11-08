@@ -1,0 +1,9 @@
+PART3
+
+Total number of primes: 455052511, Total time: 122.623045 sec, Total nodes: 1
+PART3
+
+Total number of primes: 455052511, Total time: 123.140458 sec, Total nodes: 1
+PART3
+
+Total number of primes: 455052511, Total time: 122.646243 sec, Total nodes: 1
