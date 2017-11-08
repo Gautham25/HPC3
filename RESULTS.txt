@@ -1,8 +1,20 @@
-Total number of primes: 455052511, Total time:  16.547121 sec, Total nodes: 1
-Total number of primes: 455052511, Total time:   8.782953 sec, Total nodes: 2
-Total number of primes: 455052511, Total time:   6.888409 sec, Total nodes: 4
-Total number of primes: 455052511, Total time:   3.786521 sec, Total nodes: 8
-Total number of primes: 455052511, Total time:  27.769093 sec, Total nodes: 1
-Total number of primes: 455052511, Total time:  13.744054 sec, Total nodes: 2
-Total number of primes: 455052511, Total time:  11.819688 sec, Total nodes: 4
-Total number of primes: 455052511, Total time:   5.816937 sec, Total nodes: 8
+PART1
+
+Total number of primes: 455052511, Total time:  16.590855 sec, Total nodes: 1
+Total number of primes: 455052511, Total time:   8.794289 sec, Total nodes: 2
+Total number of primes: 455052511, Total time:   7.062077 sec, Total nodes: 4
+Total number of primes: 455052511, Total time:   3.562495 sec, Total nodes: 8
+Total number of primes: 455052511, Total time:  27.769600 sec, Total nodes: 1
+PART1
+
+Total number of primes: 455052511, Total time:  16.525290 sec, Total nodes: 1
+Total number of primes: 455052511, Total time:   8.733690 sec, Total nodes: 2
+Total number of primes: 455052511, Total time:   6.858691 sec, Total nodes: 4
+Total number of primes: 455052511, Total time:   3.538837 sec, Total nodes: 8
+
+PART2
+
+Total number of primes: 455052511, Total time:  27.760496 sec, Total nodes: 1
+Total number of primes: 455052511, Total time:  13.750821 sec, Total nodes: 2
+Total number of primes: 455052511, Total time:  11.992415 sec, Total nodes: 4
+Total number of primes: 455052511, Total time:   5.814031 sec, Total nodes: 8
