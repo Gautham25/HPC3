@@ -4,6 +4,10 @@ PBS_O_WORKDIR=/home/$USER/HPC3
 
 cd $PBS_O_WORKDIR
 
+module purge
+module load gcc-4.6.2
+module load mvapich2-1.9a2/gnu-4.6.2
+
 mpicc -o HPC3_p1 HPC3_p1.c -lm
 mpicc -o HPC3_p2 HPC3_p2.c -lm
 mpicc -o HPC3_p3 HPC3_p3.c -lm
