@@ -1,4 +1,4 @@
-#1/bin/sh
+#!/bin/sh
 
 PBS_O_WORKDIR=/home/$USER/HPC3
 
