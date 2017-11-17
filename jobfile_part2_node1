@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#PBS -l nodes=1:ppn=32,walltime=01:00:00
+#PBS -l nodes=1:ppn=32,walltime=00:05:00
 #PBS -N HPC3_Part2_Node1
 #PBS -M gmani001@ucr.edu
 #PBS -m abe
