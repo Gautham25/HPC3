@@ -67,8 +67,8 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    for(k=0;k<localSize;k++)
-        localMarked[k] = 0;
+    for(i=0;i<localSize;i++)
+        localMarked[i] = 0;
 
     if ((3 + proc0_size) < (int) sqrt((double) n)) {
         if (!id) printf ("Too many processes\n");
