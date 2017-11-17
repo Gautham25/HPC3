@@ -16,18 +16,31 @@ int main(int argc, char *argv[])
 {
     //int *arrA = (int*)calloc(pow(10,10),sizeof(int));
     double elapsed_time;
-    int id, index,p,count, nodes;
-    unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
+    int id,index,p,count, nodes;
+    unsigned long long int n;
+    unsigned long long int k;
+    unsigned long long int low_value;
+    unsigned long long int high_value;
+    unsigned long long int size;
+    unsigned long long int proc0_size;
+    unsigned long long int i;
+    unsigned long long int prime;
+    unsigned long long int first;
     char *marked;
     unsigned long long int global_count;
-    unsigned long long int localLow,localHigh,localSize,localFirst;
+    unsigned long long int localLow;
+    unsigned long long int localHigh; 
+    unsigned long long int localSize;
+    unsigned long long int localFirst;
     char *localMarked;
-    unsigned long long int cacheSize, cStart, cEnd, cSize, cLow, cHigh;
-    cacheSize = 2000000;
-    cStart=0;
+    unsigned long long int cacheSize = 2000000;
+    unsigned long long int cStart = 0;
+    unsigned long long int cEnd;
+    unsigned long long int cSize;
+    unsigned long long int cLow;
+    unsigned long long int cHigh;
     //variable declaration
 
-    nodes = atoi(argv[2]);
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
@@ -137,21 +150,6 @@ int main(int argc, char *argv[])
             index++;
         }while(index < (((localHigh - 3) / 2) + 1));
 
-        // if (!id) {
-        //     while (marked[++index]);
-        //     prime = 2*index + 3;
-        // }
-        //if(p>1)
-            //MPI_Bcast(&prime,  1, MPI_INT, 0, MPI_COMM_WORLD);
-        // if(id){
-        //     localFirst = (prime * prime - localLow)/2;
-        //     for(k=localFirst;k<localSize;k+=prime){
-        //         localMarked[k] = 1;
-        //     }
-        //     while(localMarked[++index]);
-        //     prime = 2 * index + 3;
-        // }
-
         for (i = 0; i < cSize; i++){
             if (!marked[i]){
                 count++;
@@ -167,7 +165,7 @@ int main(int argc, char *argv[])
     elapsed_time += MPI_Wtime();
     if (!id) {
         global_count++;
-        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %d\n",global_count,elapsed_time,nodes);
+        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %s\n",global_count,elapsed_time,argv[2]);
         // printf ("Total elapsed time: %10.6f\n", elapsed_time);
     }
     MPI_Finalize();
