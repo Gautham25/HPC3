@@ -21,13 +21,13 @@ int main(int argc, char *argv[])
     char *marked;
     unsigned long long int global_count;
     //variable declaration    
-    nodes = atoi(argv[2]);
+    //nodes = atoi(argv[2]);
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
     MPI_Comm_rank(MPI_COMM_WORLD, &id);
     MPI_Comm_size(MPI_COMM_WORLD, &p);
-    if (argc != 3) {
+    if (argc != 2) {
           if (!id) printf ("Command line: %s <m>\n", argv[0]);
           MPI_Finalize(); exit(1);
     }
