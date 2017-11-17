@@ -1,1 +1,2 @@
-Total number of primes: 50847534, Total time:   3.210718 sec, Total nodes: 1
+Total number of primes: 455052511, Total time:  34.610716 sec, Total nodes: 1
+Total number of primes: 455052511, Total time:  18.042334 sec, Total nodes: 2
