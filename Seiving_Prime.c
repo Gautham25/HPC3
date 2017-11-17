@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
     char *marked;
     unsigned long long int global_count;
     //variable declaration
-    nodes = atoi(argv[2]);
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
@@ -83,7 +82,7 @@ int main(int argc, char *argv[])
     MPI_Reduce (&count, &global_count, 1, MPI_INT, MPI_SUM,0, MPI_COMM_WORLD);
     elapsed_time += MPI_Wtime();
     if (!id) {
-        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %d\n",global_count,elapsed_time,nodes);
+        printf("Total number of primes: %llu, Total time: %10.6f sec, Total nodes: %s\n",global_count,elapsed_time,argv[2]);
         // printf ("Total elapsed time: %10.6f\n", elapsed_time);
     }
     MPI_Finalize();
