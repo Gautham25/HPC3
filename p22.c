@@ -18,8 +18,7 @@ int main(int argc, char *argv[])
     int id, index,p,count;
     unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
     char *marked;
-    unsigned long long int global_count;
-unsigned long long int low_proc0,high_proc0,size_proc0,first_proc0;
+unsigned long long int global_count;unsigned long long int low_proc0,high_proc0,size_proc0,first_proc0;
 	char *localMarked;    //variable declaration
 
     
