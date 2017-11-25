@@ -13,14 +13,15 @@
 #define BLOCK_OWNER(index,p,n) ((((p) * index)+1)-1)/(n)
 
 int main(int argc, char *argv[])
-{double elapsed_time;
+{
+    //int *arrA = (int*)calloc(pow(10,10),sizeof(int));
+    double elapsed_time;
     int id, index,p,count, nodes;
     unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
     char *marked;
     unsigned long long int global_count;
     unsigned long long int low_proc0,high_proc0,size_proc0,first_proc0;
     char *localMarked;
- 
     //variable declaration
 
     //nodes = atoi(argv[2]);
