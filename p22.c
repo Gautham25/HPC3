@@ -14,6 +14,7 @@
 
 int main(int argc, char *argv[])
 {
+    //int *arrA = (int*)calloc(pow(10,10),sizeof(int));
     double elapsed_time;
     int id, index,p,count, nodes;
     unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
@@ -21,8 +22,9 @@ int main(int argc, char *argv[])
     unsigned long long int global_count;
     unsigned long long int low_proc0,high_proc0,size_proc0,first_proc0;
     char *localMarked;
-    
-    MPI_Init(&argc, &argv);
+    //variable declaration
+
+    nodes = atoi(argv[2]);    MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
     MPI_Comm_rank(MPI_COMM_WORLD, &id);
