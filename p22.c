@@ -15,11 +15,12 @@
 int main(int argc, char *argv[])
 {
     double elapsed_time;
-int id, index,p,count, nodes;
-	unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
-	char *marked;unsigned long long int global_count;unsigned long long int low_proc0,high_proc0,size_proc0,first_proc0;
-	char *localMarked;    //variable declaration
-
+    int id, index,p,count, nodes;
+    unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
+    char *marked;
+    unsigned long long int global_count;
+    unsigned long long int low_proc0,high_proc0,size_proc0,first_proc0;
+    char *localMarked;
     
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
