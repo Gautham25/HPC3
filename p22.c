@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     char *localMarked;
     //variable declaration
 
-    nodes = atoi(argv[2]);
+    //nodes = atoi(argv[2]);
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
