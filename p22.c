@@ -14,7 +14,6 @@
 
 int main(int argc, char *argv[])
 {
-    //int *arrA = (int*)calloc(pow(10,10),sizeof(int));
     double elapsed_time;
     int id, index,p,count, nodes;
     unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
@@ -24,7 +23,7 @@ int main(int argc, char *argv[])
     char *localMarked;
     //variable declaration
 
-    //nodes = atoi(argv[2]);
+    nodes = atoi(argv[2]);
     MPI_Init(&argc, &argv);
     MPI_Barrier(MPI_COMM_WORLD);
     elapsed_time = -MPI_Wtime();
@@ -44,7 +43,6 @@ int main(int argc, char *argv[])
     high_proc0 = (unsigned long long int)sqrt(n);
     size_proc0 = (high_proc0 - low_proc0) / 2 + 1;
     localMarked = (char*)malloc(size_proc0);
-
     if (localMarked == NULL) {
         printf("Cannot allocate memory to local array for seiving primes\n");
         MPI_Finalize();
