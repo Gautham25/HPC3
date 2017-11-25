@@ -43,7 +43,6 @@ int main(int argc, char *argv[])
     high_proc0 = (unsigned long long int)sqrt(n);
     size_proc0 = (high_proc0 - low_proc0) / 2 + 1;
     localMarked = (char*)malloc(size_proc0);
-
     if (localMarked == NULL) {
         printf("Cannot allocate memory to local array for seiving primes\n");
         MPI_Finalize();
