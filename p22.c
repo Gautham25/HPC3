@@ -15,7 +15,7 @@
 int main(int argc, char *argv[])
 {
     double elapsed_time;
-    int id, index,p,count, nodes;
+    int id, index,p,count;
     unsigned long long int n,k,low_value, high_value, size, proc0_size,i,prime,first;
     char *marked;
     unsigned long long int global_count;
